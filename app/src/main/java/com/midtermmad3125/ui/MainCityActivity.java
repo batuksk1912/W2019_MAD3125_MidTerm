@@ -111,21 +111,4 @@ public class MainCityActivity extends AppCompatActivity
 
         return mCity;
     }
-
-    private String loadJSONFromAsset() {
-        String json;
-        try {
-            InputStream is = getAssets().open("moscow_weather.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            int count = is.read(buffer);
-            is.close();
-            Log.d("-- COUNT --", String.format("%d Bytes", count));
-            json = new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
 }
